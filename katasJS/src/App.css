@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.square {
+width: 10vw;
+height: 10vw;
+margin:0.1vw
+}
+
+.board-row {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.status{
+  margin-bottom: 10px;
+  color:beige;
+  font-weight: bold;
+  font-size: 1.5em;
+}
