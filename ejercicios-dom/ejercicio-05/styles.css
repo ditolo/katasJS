@@ -1,0 +1,131 @@
+
+
+ul::scroll-marker-group {
+  position: absolute;
+  top: calc(anchor(bottom) - 3.5vh);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position-anchor: --my-carousel;
+}
+
+li::scroll-marker {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid rgb(140, 140, 140);
+  border-radius: 50%;
+}
+
+li::scroll-marker:target-current {
+  background-color: rgb(168, 204, 246);
+}
+
+ul {
+  width: 30vw;
+  height: 20vh;
+  padding: 40px;
+  display: flex;
+  gap: 0.5vw;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+
+}
+
+li {
+  border-radius: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  list-style-type: none;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  scroll-snap-align: center;
+  flex: 0 0 100%;
+}
+
+li:nth-child(even) {
+  background-color: rgb(204, 240, 240);
+}
+
+ul::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: rgb(168, 168, 168);
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+  opacity: 1;
+}
+
+ul::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+ul::scroll-button(left) {
+  content: "◄";
+  right: calc(anchor(center) - -5vw);
+  bottom: calc(anchor(bottom) - 0.5vh);
+}
+
+ul::scroll-button(right) {
+  content: "►";
+  right: calc(anchor(center) - 7.7vw);
+  bottom: calc(anchor(bottom) - 0.5vh);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  height: 20vh;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  width: 80vw;
+    anchor-name: --my-carousel;
+    padding: 0px;
+    margin: 20px;
+}
+
+body{
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 100%;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  height: 20vh;
+}
+
+footer > p {
+  font-size: x-large;
+
+}
